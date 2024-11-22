@@ -1,0 +1,83 @@
+@mixin title {
+    font-family: $second-family;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40px;
+
+    @media (max-width: 1023.98px) {
+        font-size: 30px;
+    }
+
+    @media (max-width: 991px) {
+        line-height: 1;
+    }
+
+    @media (max-width: 767.98px) {
+        font-size: 26px;
+    }
+
+    @media (max-width: 575.98px) {
+        font-size: 22px;
+    }
+}
+
+@mixin title-second {
+    font-family: $second-family;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+
+    @media (max-width: 1023.98px) {
+        font-size: 18px;
+    }
+
+    @media (max-width: 991px) {
+        line-height: 1;
+    }
+
+    @media (max-width: 767.98px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 575.98px) {
+        font-size: 14px;
+    }
+}
+
+@mixin button-fonts {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+
+    @media (max-width: 991px) {
+        line-height: 1;
+    }
+
+    @media (max-width: 767.98px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 575.98px) {
+        font-size: 12px;
+    }
+}
+
+@mixin input-fonts {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    @media (max-width: 991px) {
+        line-height: 1;
+    }
+
+    @media (max-width: 767.98px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 575.98px) {
+        font-size: 12px;
+    }
+}

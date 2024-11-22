@@ -1,0 +1,456 @@
+.account {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    &__block-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    &__wrap-account,
+    &__wrap-balance {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__title,
+    &__account-number {
+        @include title;
+    }
+
+    &__account-number {
+        font-weight: 400;
+    }
+
+    &__button-accounts-back,
+    &__button-transfer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__button-accounts-back {
+        width: 209px;
+        text-align: center;
+    }
+
+    &__wrap-WN {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+    }
+
+    &__balance,
+    &__balance-number {
+        font-family: $second-family;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    &__balance-number {
+        font-weight: 400;
+    }
+
+    &__block-middle {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    &__block-transfers,
+    &__block-chart {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        padding: 25px 50px;
+        width: calc((100% - 50px) / 2);
+        border-radius: 50px;
+    }
+
+    &__block-transfers {
+        position: relative;
+        background-color: $gray-background;
+    }
+
+    &__block-chart {
+        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+        background-color: white;
+    }
+
+    &__chart-balance {
+        width: 100%;
+        height: 195px;
+    }
+
+    &__tr-title,
+    &__chart-title,
+    &__history-title {
+        @include title-second;
+    }
+
+    &__wrap-rec {
+        position: relative;
+    }
+
+    &__wrap-rec,
+    &__wrap-amount {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+    }
+
+    &__descr-recipient-input,
+    &__descr-amount-input {
+        @include button-fonts;
+        color: $text;
+    }
+
+    &__button-transfer {
+        align-self: center;
+    }
+
+    &__block-down {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 50px;
+        width: 100%;
+        border-radius: 56px;
+        background-color: $gray-background;
+    }
+
+    &__history-title {
+        margin-bottom: 25px;
+    }
+
+    &__history-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 20px 49px;
+        width: 100%;
+        border-radius: 15px;
+        background-color: $main;
+    }
+
+    &__history-container {
+        height: 150px;
+        overflow-y: auto;
+    }
+
+    &__history-sender-descr-header,
+    &__history-recipient-descr-header,
+    &__history-amount-descr-header,
+    &__history-date-descr-header {
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 120%;
+        color: white;
+    }
+
+    &__tr-history {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 21px 49px 26px 49px;
+        border-bottom: 2px solid rgba($second-border, 0.1);
+    }
+
+    &__tr-history-account-sender,
+    &__tr-history-account-recipient,
+    &__tr-history-amount,
+    &__tr-history-date {
+        @include input-fonts;
+        color: $gray-text;
+    }
+
+    &__tr-history-account-recipient {
+        margin-right: 5px;
+    }
+
+    &__history-sender-descr-header,
+    &__history-recipient-descr-header,
+    &__tr-history-account-sender,
+    &__tr-history-account-recipient {
+        width: calc(30% - 10px);
+    }
+
+    &__history-amount-descr-header,
+    &__history-date-descr-header,
+    &__tr-history-amount,
+    &__tr-history-date {
+        width: 20%;
+    }
+
+    &__history-header,
+    &__chart-canvas-amount {
+        transition: transform .3s ease-in-out;
+    }
+
+    &__history-header:focus {
+        transform: scale(1.05);
+    }
+
+    @media screen and (min-width: 1024px) {
+
+        &__history-header:hover {
+            transform: scale(1.03);
+        }
+    }
+}
+
+.img-card {
+    position: absolute;
+    right: -45px;
+    object-fit: contain;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+//Медиа-адаптив
+@media (max-width: 1199.98px) {
+    .account {
+
+        &__block-down,
+        &__block-transfers,
+        &__block-chart {
+            padding: 25px;
+            border-radius: 25px;
+        }
+
+        &__tr-history,
+        &__history-header {
+            flex-wrap: wrap;
+        }
+
+        &__history-sender-descr-header,
+        &__history-recipient-descr-header,
+        &__tr-history-account-sender,
+        &__tr-history-account-recipient,
+        &__history-amount-descr-header,
+        &__history-date-descr-header,
+        &__tr-history-amount,
+        &__tr-history-date {
+            width: calc(50% - 10px);
+        }
+
+        &__history-container {
+            height: 220px;
+        }
+    }
+}
+
+@media (max-width: 1023.98px) {
+    .account {
+
+        &__title,
+        &__account-number {
+            font-size: 28px;
+        }
+
+        &__balance,
+        &__balance-number {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .account {
+
+        &__title,
+        &__account-number {
+            font-size: 26px;
+            line-height: 1;
+        }
+
+        &__wrap-balance {
+            flex-direction: column-reverse;
+            gap: 20px;
+        }
+
+        &__block-middle {
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        &__block-transfers {
+            width: 570px;
+        }
+
+        &__block-chart {
+            width: 100%;
+        }
+
+        &__balance,
+        &__balance-number {
+            line-height: 1;
+        }
+
+        &__history-sender-descr-header,
+        &__history-recipient-descr-header,
+        &__history-amount-descr-header,
+        &__history-date-descr-header {
+            font-size: 18px;
+            line-height: 1;
+
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .account {
+        &__container {
+            gap: 30px;
+        }
+
+        &__block-top {
+            flex-direction: column;
+        }
+
+        &__wrap-account,
+        &__wrap-balance {
+            gap: 25px;
+        }
+
+        &__title,
+        &__account-number {
+            font-size: 24px;
+        }
+
+        &__balance,
+        &__balance-number {
+            font-size: 16px;
+        }
+
+        &__block-transfers {
+            width: 100%;
+        }
+
+        &__button-transfer {
+            padding: 10px 12px;
+        }
+
+        &__wrap-rec,
+        &__wrap-amount {
+            justify-content: space-between;
+        }
+
+        &__history-sender-descr-header,
+        &__history-recipient-descr-header,
+        &__history-amount-descr-header,
+        &__history-date-descr-header {
+            font-size: 16px;
+        }
+
+        &__tr-history {
+            gap: 15px;
+            padding: 20px;
+        }
+
+        &__tr-history-account-sender,
+        &__tr-history-account-recipient {
+            width: 100%;
+        }
+
+        &__tr-history-amount::before,
+        &__tr-history-date::before,
+        &__tr-history-account-sender::before,
+        &__tr-history-account-recipient::before {
+            content: "Счет отправителя:";
+            margin-right: 20px;
+        }
+
+        &__tr-history-account-sender::before {
+            content: "Счет отправителя:";
+        }
+
+        &__tr-history-account-recipient::before {
+            content: "Счет получателя:";
+        }
+
+        &__tr-history-amount::before {
+            content: "Сумма:";
+        }
+
+        &__tr-history-date::before {
+            content: "Дата:";
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .account {
+
+        &__title {
+            font-size: 18px;
+        }
+
+        &__account-number {
+            font-size: 17px;
+        }
+
+        &__block-transfers {
+            grid-area: 20px;
+        }
+
+        &__wrap-rec,
+        &__wrap-amount {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        &__number-account-rec,
+        &__number-amount {
+            width: 100%;
+        }
+
+        &__tr-history,
+        &__history-header {
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        &__history-sender-descr-header,
+        &__history-recipient-descr-header,
+        &__history-amount-descr-header,
+        &__history-date-descr-header {
+            font-size: 14px;
+        }
+
+        &__history-sender-descr-header,
+        &__history-recipient-descr-header,
+        &__history-amount-descr-header,
+        &__history-date-descr-header,
+        &__tr-history-amount,
+        &__tr-history-date,
+        &__tr-history-account-sender,
+        &__tr-history-account-recipient {
+            width: 100%;
+            text-align: center;
+        }
+
+        &__tr-history-amount::before,
+        &__tr-history-date::before,
+        &__tr-history-account-sender::before,
+        &__tr-history-account-recipient::before {
+            content: "";
+            margin-right: 0;
+        }
+    }
+}

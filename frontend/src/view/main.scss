@@ -1,0 +1,15 @@
+@import '_variables';
+@import '_mixins';
+@import '_main_structures';
+@import '../spinners/_spinners';
+@import '_fonts';
+@import 'header/_header';
+@import 'header/_header_buttons';
+/*-------------------------------*/
+
+@import 'authorization/_authorization';
+@import 'accounts/_accounts';
+@import 'account/_account';
+@import 'history/_history';
+@import 'currencies/_currencies';
+@import 'atms/_ATMs';
