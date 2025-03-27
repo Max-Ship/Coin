@@ -1,6 +1,5 @@
-let myMap;
-
 export async function banks(res) {
+    let myMap;
     ymaps.ready(() => {
         if (!myMap) {
             myMap = new ymaps.Map("map", {
